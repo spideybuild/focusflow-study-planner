@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FocusFlow — Study Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background decorations -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+
+            <div>
+                <h1>FocusFlow</h1>
+                <span>Study smarter. Flow better.</span>
+            </div>
+        </div>
+
+        <button class="theme-btn" id="themeBtn" title="Toggle theme">
+            ☀
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Hero -->
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <span class="eyebrow">
+                    ✦ YOUR DAILY FOCUS SPACE
+                </span>
+
+                <h2>
+                    Turn your
+                    <span>plans</span>
+                    into progress.
+                </h2>
+
+                <p>
+                    Organize your study sessions, stay focused,
+                    and make every minute count.
+                </p>
+
+            </div>
+
+
+            <!-- ================= BEAR ================= -->
+
+            <div class="bear-card" id="bearCard">
+
+                <div class="bear-glow"></div>
+
+                <div class="speech-bubble" id="speechBubble">
+                    Hey! Ready to focus? 🐻
+                </div>
+
+                <div class="bear-wrapper" id="bearWrapper">
+
+                    <img
+                        src="assets/bear.png"
+                        alt="FocusFlow Bear"
+                        class="bear"
+                        id="bear"
+                    >
+
+                    <!-- Eyes overlay -->
+                    <div class="eye eye-left">
+                        <div class="pupil"></div>
+                    </div>
+
+                    <div class="eye eye-right">
+                        <div class="pupil"></div>
+                    </div>
+
+                </div>
+
+                <div class="bear-hint">
+                    Click me! ✨
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="dashboard">
+
+            <!-- Add task -->
+
+            <div class="add-task-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="mini-label">PLAN YOUR DAY</span>
+                        <h3>Add a study session</h3>
+                    </div>
+
+                    <div class="plus-icon">+</div>
+
+                </div>
+
+
+                <form id="taskForm">
+
+                    <div class="input-group full">
+
+                        <label>What are you studying?</label>
+
+                        <input
+                            type="text"
+                            id="taskName"
+                            placeholder="e.g. Learn JavaScript"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="input-group">
+
+                            <label>Subject</label>
+
+                            <select id="subject">
+
+                                <option value="Coding">💻 Coding</option>
+                                <option value="DSA">🧠 DSA</option>
+                                <option value="Database">🗄️ Database</option>
+                                <option value="College">📚 College</option>
+                                <option value="Other">✨ Other</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>Duration</label>
+
+                            <select id="duration">
+
+                                <option value="30">30 min</option>
+                                <option value="45">45 min</option>
+                                <option value="60">1 hour</option>
+                                <option value="90">1.5 hours</option>
+                                <option value="120">2 hours</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="priority-section">
+
+                        <label>Priority</label>
+
+                        <div class="priority-options">
+
+                            <label class="priority-option high">
+
+                                <input
+                                    type="radio"
+                                    name="priority"
+                                    value="High"
+                                    checked
+                                >
+
+                                <span>High</span>
+
+                            </label>
+
+
+                            <label class="priority-option medium">
+
+                                <input
+                                    type="radio"
+                                    name="priority"
+                                    value="Medium"
+                                >
+
+                                <span>Medium</span>
+
+                            </label>
+
+
+                            <label class="priority-option low">
+
+                                <input
+                                    type="radio"
+                                    name="priority"
+                                    value="Low"
+                                >
+
+                                <span>Low</span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit" class="add-btn">
+
+                        <span>+ Add Study Session</span>
+
+                        <span class="btn-arrow">→</span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================= PROGRESS ================= -->
+
+            <div class="progress-card">
+
+                <div class="progress-top">
+
+                    <div>
+
+                        <span class="mini-label">
+                            TODAY'S PROGRESS
+                        </span>
+
+                        <h3 id="progressTitle">
+                            Let's get started!
+                        </h3>
+
+                    </div>
+
+                    <div class="percentage" id="percentage">
+                        0%
+                    </div>
+
+                </div>
+
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
+
+                </div>
+
+
+                <div class="progress-stats">
+
+                    <span id="completedText">
+                        0 completed
+                    </span>
+
+                    <span id="totalText">
+                        0 sessions
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TASKS ================= -->
+
+        <section class="tasks-section">
+
+            <div class="tasks-heading">
+
+                <div>
+
+                    <span class="mini-label">
+                        YOUR SCHEDULE
+                    </span>
+
+                    <h3>Today's Sessions</h3>
+
+                </div>
+
+
+                <button
+                    class="clear-btn"
+                    id="clearBtn"
+                >
+                    Clear all
+                </button>
+
+            </div>
+
+
+            <div
+                class="tasks-container"
+                id="tasksContainer"
+            >
+
+                <!-- Empty state -->
+
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                >
+
+                    <div class="empty-icon">
+                        ✦
+                    </div>
+
+                    <h4>Your focus journey starts here</h4>
+
+                    <p>
+                        Add your first study session above.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <div>
+                Built with
+                <span>HTML</span> ·
+                <span>CSS</span> ·
+                <span>JavaScript</span>
+            </div>
+
+            <div>
+                Day 3 · Keep building 🚀
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- Toast -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        <span>✓</span>
+        <p>Task added!</p>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
