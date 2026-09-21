@@ -34,8 +34,10 @@
 ```text
 focusflow-study-planner/
 │
+├── assets/
+│   └── bear.png
+│
 ├── index.html
 ├── style.css
 ├── script.js
-├── bear.png
 └── README.md
